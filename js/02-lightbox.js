@@ -9,6 +9,11 @@ const refs = {
 
 createMarkup(galleryItems);
 
+new SimpleLightbox('.gallery a', {
+	captionsData: 'alt',
+	captionDelay: 250,
+});
+
 function createMarkup(gallery) {
 	const markupString = galleryItems.map(({ preview, original, description }) => 
 `<li class="gallery__item">
@@ -20,7 +25,3 @@ function createMarkup(gallery) {
 	refs.container.insertAdjacentHTML('beforeend', markupString);
 };
 
-new SimpleLightbox('.gallery a', {
-	captionsData: 'alt',
-	captionDelay: 250,
-});
